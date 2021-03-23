@@ -268,13 +268,125 @@ public class AppTest {
         studentXMLService.add(params);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = ValidatorException.class)
     public void tc_16_AddStudent() throws ValidatorException {
         studentValidator = new StudentValidator();
         studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
         studentXMLService = new StudentXMLService(studentXMLRepo);
 
-        String id = null;
+        String id = "";
+        String nume = "n1";
+        String grupa = "11";
+        String email = "e1";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_17_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n1";
+        String grupa = "0";
+        String email = "e1";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test
+    public void tc_18_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n1";
+        String grupa = "1";
+        String email = "e1";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test(expected = ValidatorException.class)
+    public void tc_19_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n1";
+        String grupa = "-1";
+        String email = "e1";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test
+    public void tc_20_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n";
+        String grupa = "11";
+        String email = "e1";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test
+    public void tc_21_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n1";
+        String grupa = "11";
+        String email = "e";
+        String prof = "p1";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test
+    public void tc_22_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
+        String nume = "n1";
+        String grupa = "11";
+        String email = "e1";
+        String prof = "p";
+
+        String[] params = {id, nume, grupa, email, prof};
+        studentXMLService.add(params);
+    }
+
+    @Test
+    public void tc_23_AddStudent() throws ValidatorException {
+        studentValidator = new StudentValidator();
+        studentXMLRepo = new StudentXMLRepo(studentValidator, "StudentiXML_test.xml");
+        studentXMLService = new StudentXMLService(studentXMLRepo);
+
+        String id = "1";
         String nume = "n1";
         String grupa = "11";
         String email = "e1";
