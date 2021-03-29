@@ -2,12 +2,10 @@ package ro.ubb;
 
 import org.junit.Test;
 import ro.ubb.Domain.Student;
+import ro.ubb.Domain.TemaLab;
 import ro.ubb.Exceptions.ValidatorException;
-import ro.ubb.Repository.XMLFileRepository.StudentXMLRepo;
 import ro.ubb.Repository.XMLFileRepository.TemaLabXMLRepo;
-import ro.ubb.Service.XMLFileService.StudentXMLService;
 import ro.ubb.Service.XMLFileService.TemaLabXMLService;
-import ro.ubb.Validator.StudentValidator;
 import ro.ubb.Validator.TemaLabValidator;
 
 import static org.junit.Assert.assertNotNull;
@@ -30,6 +28,8 @@ public class WhiteBoxTest {
         String[] params={id,descr,saptLim,saptPred};
 
         temaLabXMLService.add(params);
+        TemaLab addedAssignment = temaLabXMLService.findOne(1);
+        assertNotNull(addedAssignment);
     }
 
     @Test(expected = ValidatorException.class)
