@@ -11,7 +11,7 @@ public abstract class AbstractXMLService<ID,E extends HasId<ID>> {
         this.xmlrepo = xmlrepo;
     }
 
-    protected abstract E extractEntity(String[] params);
+    protected abstract E extractEntity(String[] params) throws ValidatorException;
         //return new Student(params[0],params[1],Integer.parseInt(params[2]),params[3],params[4]);
     //}
 
@@ -22,7 +22,7 @@ public abstract class AbstractXMLService<ID,E extends HasId<ID>> {
     public void remove(ID id){
         xmlrepo.delete(id);
     }
-    public void update(String params[]){
+    public void update(String params[]) throws ValidatorException {
         E s=extractEntity(params);
         xmlrepo.update(s);
     }
